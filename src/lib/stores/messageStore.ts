@@ -8,7 +8,7 @@ export const addMessage = (message => messageStore.update(state => [...state, me
 
 export const clearMessages = () => messageStore.set([]);
 
-export const removeMesage = (index: number) => messageStore.update((state) => {
+export const removeMessage = (index: number) => messageStore.update((state) => {
     state.splice(index, 1);
     return state;
 })

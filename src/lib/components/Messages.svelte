@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { removeMesage, subscribeToMessages } from '$lib/stores/messageStore';
+	import { removeMessage, subscribeToMessages } from '$lib/stores/messageStore';
 	import Message from './Message.svelte';
 
 	let hasTooManyMessages = false;
@@ -18,6 +18,6 @@
 	{/if}
 
 	{#each messages as message, index}
-		<Message {message} clear={() => removeMesage(index)} />
+		<Message {message} clear={() => removeMessage(index)} />
 	{/each}
 </div>

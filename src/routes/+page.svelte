@@ -1,5 +1,4 @@
 <script>
-	import Messages from '$lib/components/Messages.svelte';
 	import VimButton from '$lib/components/VimButton.svelte';
 	import { addMessage } from '$lib/stores/messageStore';
 
@@ -9,8 +8,3 @@
 </script>
 
 <VimButton onClick={onVimClick} />
-
-<Messages />
-
-<style lang="scss">
-</style>

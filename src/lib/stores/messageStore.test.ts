@@ -1,5 +1,5 @@
 import { afterEach, beforeAll, describe, expect, it } from "vitest";
-import { addMessage, clearMessages, removeMesage, subscribeToMessages } from "./messageStore";
+import { addMessage, clearMessages, removeMessage, subscribeToMessages } from "./messageStore";
 
 describe("MessageStore", () => {
     let currentValue: string[];
@@ -32,14 +32,14 @@ describe("MessageStore", () => {
         addMessage("test message");
         addMessage("test message 2");
 
-        removeMesage(0);
+        removeMessage(0);
 
         expect(currentValue.length).toEqual(1);
         expect(currentValue[0]).toEqual("test message 2");
     })
 
     it("doesn't break when trying to remove the first message from the queue when the queue is empty", () => {
-        removeMesage(0);
+        removeMessage(0);
 
         expect(currentValue.length).toEqual(0);
     })
