@@ -1,6 +1,6 @@
+import { fireEvent, render, type RenderResult } from '@testing-library/svelte';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import Page from './+page.svelte';
-import { type RenderResult, render, fireEvent, act } from '@testing-library/svelte';
 
 describe('Main Page', () => {
 	let result: RenderResult<Page>;
@@ -13,12 +13,6 @@ describe('Main Page', () => {
 		result.unmount();
 	});
 
-	it('renders without breaking', () => {
-		expect(result).toBeTruthy();
-		let heading = result.container.querySelector('h1');
-		expect(heading).toBeTruthy();
-		expect(heading?.innerHTML).toEqual('Welcome to SvelteKit');
-	});
 
 	it('contains a vim button', () => {
 		expect(result.getByTestId('vim-button')).toBeTruthy();

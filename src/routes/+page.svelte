@@ -1,17 +1,16 @@
 <script>
-	import Message from '$lib/components/Message.svelte';
+	import Messages from '$lib/components/Messages.svelte';
 	import VimButton from '$lib/components/VimButton.svelte';
+	import { addMessage } from '$lib/stores/messageStore';
 
 	let vimClicked = false;
 
-	let onVimClick = () => (vimClicked = true);
+	let onVimClick = () => addMessage("This is Vim!  You don't use a mouse for Vim!");
 </script>
-
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 
 <VimButton onClick={onVimClick} />
 
-{#if vimClicked}
-	<Message message="This is Vim!  You don't use a mouse for Vim!" />
-{/if}
+<Messages />
+
+<style lang="scss">
+</style>
